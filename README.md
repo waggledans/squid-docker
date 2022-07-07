@@ -1,4 +1,4 @@
-#( Squid Docker image
+# Squid Docker image
 
 - [Introduction](#introduction)
 - [How to use it](#how-to-use-it)
@@ -56,5 +56,5 @@ You can mount a directory containing a certificate and a key to be used by squid
   $ cat ./my_squid_configs/acls/no_ssl_bump_domains.txt
   google.com
 
-  $ docker run -p 3128:3128 -d --volume $(pwd)/my_squid_configs/squid --name squid5 dans/squid:5.6
+  $ docker run -p 3128:3128 -d --volume $(pwd)/my_squid_configs:/squid --name squid5 dans/squid:5.6
 ```
