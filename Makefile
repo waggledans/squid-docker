@@ -18,8 +18,8 @@ help: ## prints (this) help message
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
 build: ## builds docker image
-	@docker build --tag=dans/squid:5.2 .
+	@docker build --tag=dans/squid:5.6 .
 run: ## runs docker container
-	@docker run -p 3128:3128 -it --name squid --rm dans/squid:5.2
+	@docker run -p 3128:3128 -it --name squid --rm dans/squid:5.6
 shell: ## starts a container and execs into its shell
-	@docker run -p 3128:3128 -it --name squid --rm dans/squid:5.2 -- bash
+	@docker run -p 3128:3128 -it --name squid --rm dans/squid:5.6 -- bash

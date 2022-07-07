@@ -6,7 +6,7 @@
 # Introduction
 
 Yet another docker image for [Squid proxy server](http://www.squid-cache.org/).
-This dockerfile builds a Debian-11 based Squid-5.2 image with
+This dockerfile builds a Debian-11 based Squid-5.x image with
 [SSL bumping support](https://wiki.squid-cache.org/Features/SslBump).
 It installs [squid-openssl](https://packages.debian.org/sid/squid-openssl) debian package
 which contains squid compiled with `--with-openssl` option
@@ -24,7 +24,7 @@ certificate for SSL bumping or it can generate a self-signed cert each time it s
 To simply run a docker container:
 
 ```bash
-  $ docker run -p 3128:3128 -d --name squid5 dans/squid:5.2
+  $ docker run -p 3128:3128 -d --name squid5 dans/squid:5.6
 ```
 
 ## Use your own certificate for SSL bumping
@@ -34,7 +34,7 @@ You can mount a directory containing a certificate and a key to be used by squid
 ```bash
   $ ls ./my_certs
   private.key private.crt
-  $ docker run -p 3128:3128 -d --volume $(pwd)/my_certs:/certs --name squid5 dans/squid:5.2
+  $ docker run -p 3128:3128 -d --volume $(pwd)/my_certs:/certs --name squid5 dans/squid:5.6
 ```
 
 ## Use your custom squid configuration
@@ -56,5 +56,5 @@ You can mount a directory containing a certificate and a key to be used by squid
   $ cat ./my_squid_configs/acls/no_ssl_bump_domains.txt
   google.com
 
-  $ docker run -p 3128:3128 -d --volume $(pwd)/my_squid_configs/squid --name squid5 dans/squid:5.2
+  $ docker run -p 3128:3128 -d --volume $(pwd)/my_squid_configs/squid --name squid5 dans/squid:5.6
 ```
