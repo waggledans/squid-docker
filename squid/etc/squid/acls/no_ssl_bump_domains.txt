@@ -1,1 +1,2 @@
 nossl_domain.some
+example.com

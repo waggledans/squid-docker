@@ -40,4 +40,7 @@ COPY squid/ssl_bump_certs/* $SSL_BUMP_CERT_DIR/
 
 WORKDIR /
 
+EXPOSE 3128
+EXPOSE 3129
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
